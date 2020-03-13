@@ -1,3 +1,8 @@
+var myElement = document.getElementById('me');
+var mc = new Hammer(myElement);
+
+// listen to events...
+mc.on("panleft panright tap press", function(ev) {});
 $(document).ready(function() {
     $('.left').css('display','none');
 });
