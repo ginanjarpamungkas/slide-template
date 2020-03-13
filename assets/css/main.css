@@ -73,7 +73,7 @@ section.hide{left: -340px;animation: sectionhide 0.5s linear;}
     @keyframes showMobile {0% { bottom:-44px; }100%{bottom:0}}
     @keyframes hideMobile {0%{bottom:0}100% { bottom:-44px; }}
     @keyframes sectionshowMobile {0% { bottom:-100px; }100%{bottom:43px}}
-    @keyframes sectionhideMobile {0%{bottom:43px}100% { bottom:-100px; }}
+    @keyframes sectionhideMobile {0%{bottom:43px}100% { bottom:-340px; }}
 
     .arrow{font-size: 30px;}
 
