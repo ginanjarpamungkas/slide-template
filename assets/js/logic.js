@@ -1,13 +1,20 @@
 var myElement = document.getElementById('me');
 var mc = new Hammer(myElement);
-
+var max = $('.slide').length;
+var prev = 0;
+var now = 1;
+var next = 2;
 // listen to events...
 mc.on("swipeleft swiperight tap", function(ev) {
-    if (ev.type == 'swipeleft') {
-        $('#right').click()
+    if (now != max) {
+        if (ev.type == 'swipeleft') {
+            $('#right').click()
+        }
     }
-    if (ev.type == 'swiperight') {
-        $('#left').click()
+    if (now != 1) {
+        if (ev.type == 'swiperight') {
+            $('#left').click()
+        }
     }
 });
 $(document).ready(function() {
@@ -15,10 +22,6 @@ $(document).ready(function() {
 });
 
 $(function() {
-    var max = $('.slide').length;
-    var prev = 0;
-    var now = 1;
-    var next = 2;
     $('#caption-btn').click(function() {
         var id = $('#btn-caption').data('id');
         if (id == 1) {
