@@ -152,8 +152,8 @@ $(function() {
                     $('#caption-desc').fadeIn('slow');
                 break
                 case 'hide-caption':
-                    $('#caption').attr('class','caption hide');
                     $('#caption-desc').hide();
+                    $('#caption').attr('class','caption hide');
                 break
                 case 'change-images':
                     $('img[name="thumbnail'+(thumbnail-1)+'"]').attr('id','hide-left');
