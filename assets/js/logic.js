@@ -2,7 +2,14 @@ var myElement = document.getElementById('me');
 var mc = new Hammer(myElement);
 
 // listen to events...
-mc.on("panleft panright tap press", function(ev) {});
+mc.on("swipeleft swiperight tap", function(ev) {
+    if (ev.type == 'swipeleft') {
+        $('#right').click()
+    }
+    if (ev.type == 'swiperight') {
+        $('#left').click()
+    }
+});
 $(document).ready(function() {
     $('.left').css('display','none');
 });
