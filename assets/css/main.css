@@ -1,0 +1,90 @@
+body{margin: 0;max-height: 100vh;overflow: hidden;background-color: black;position: relative;}
+
+.header {position: absolute;top: 0;right:0;width: auto;padding: 10pt;display: flex;justify-content: end;z-index: 3;}
+
+.arrow {font-size: 40px;color:#fff;position: absolute;z-index: 5;top: 45%;cursor: pointer;background: rgba(255, 255, 255, .2);padding: 5px;border:1px solid rgba(255, 255, 255, .3);}
+.arrow:hover {color: #000;background: rgba(255, 255, 255, .5);}
+.right {right: 0;}
+.left {left: 0;}
+
+.caption {width: 40px;height: 100vh;position: fixed;top: 0;background-color: #4b4b4b;z-index: 4;}
+.caption.hide {animation: hide 0.5s linear;left: -40px;}
+.caption.show {animation: show 0.5s linear;left: 0;}
+.caption span {width: 40px;display: flex;justify-content: center;padding: 5pt 0;border-bottom: 1px solid #000;cursor: pointer;}
+.caption span a {text-decoration: none;color: #fff;font-size: 20px;writing-mode: vertical-lr;transform: rotate(180deg);display: block;}
+section{position: fixed;top: 0;background-color: rgb(0, 0, 0,0.8);color:#fff;;width: 300px;padding: 5pt;z-index: 3;}
+section.show{left: 40px;animation: sectionshow 0.5s linear;}
+section.hide{left: -340px;animation: sectionhide 0.5s linear;}
+
+.container {width: 100%;height: 100vh;position: relative;}
+.container .thumbnails-place {position: absolute;top: 0;bottom: 0;left: 0;right: 0;height: 100%;overflow: hidden;z-index: 1;display: flex;align-items: center;justify-content: center;}
+.container .thumbnails-place .thumbnail{object-fit: cover;}
+.container .thumbnails-place .thumbnail.zoomIn{height: 100%; animation: zoomIn 1s linear;}
+.container .thumbnails-place .thumbnail.zoomOut{height: auto;width: 70%;animation: zoomOut 1s linear;}
+.container .thumbnails-place .thumbnail#show-right{margin-right: 0;animation: imgshowfromright 1s linear;}
+.container .thumbnails-place .thumbnail#show-left{margin-left: 0;animation: imgshowfromleft 1s linear;}
+.container .thumbnails-place .thumbnail#hide-left{margin-left: -200%;animation: imghidefromright 1s linear;}
+.container .thumbnails-place .thumbnail#hide-right{margin-right: -200%;animation: imghidefromleft 1s linear;}
+
+.container .slides-place {position: absolute;top: 0; bottom: 0; left: 0;right: 0;z-index: 2;}
+.container .slides-place .slide {position: absolute;top: 0; bottom: 0;z-index: 2;background-color: rgb(0, 0, 0,0.5);width: 100%;display: block;}
+.container .slides-place .slide.show-right {right: 0;z-index: 2;background-color: rgb(0, 0, 0,0.5);animation: slideshowfromright 1s linear;}
+.container .slides-place .slide.show-left {left: 0;z-index: 2;background-color: rgb(0, 0, 0,0.5);animation: slideshowfromleft 1s linear;}
+.container .slides-place .slide.hide-left {left: -100%;z-index: 2;background-color: rgb(0, 0, 0,0.5);animation: slidehidefromright 1s linear;}
+.container .slides-place .slide.hide-right {right: -100%;z-index: 2;background-color: rgb(0, 0, 0,0.5);animation: slidehidefromleft 1s linear;}
+
+.container .thumbnails-place .thumbnail-resize.hide,.container .thumbnails-place .thumbnail.hide,.container .slides-place .slide.hide {display: none !important;}
+
+#slide1{background-color: unset;}
+.title-content{position: absolute;top: 10%;bottom: auto;max-width: 320px;height: auto;text-align: left;margin: 55px;padding: 0;color: #fff;text-shadow: 1px 1px 1px black;}
+.title-content h1{margin-bottom: 20px;line-height: 1em;font-size: 55px;}
+.title-content p{font-size: 19px;}
+.title-content a{background: rgba(255,255,255,.8);color: #000;padding: 16px 20px;text-shadow: none;font-size: 14px;line-height: 22px;width: 100%;margin-top: 50px;cursor: pointer;text-align: center;}
+
+.content{color: #fff;display: flex;flex-direction: column;justify-content: center;align-items: center;width: 100%;height: 100%;padding: 50pt;box-sizing: border-box;}
+.content p{font-size: 32px;line-height: 36px;}
+@keyframes show {0% { left:-35px; }100%{left:0}}
+@keyframes hide {0%{left:0}100% { left:-35px; }}
+@keyframes sectionshow {0% { left:-341px; }100%{left:40px}}
+@keyframes sectionhide {0%{left:40px}100% { left:-341px; }}
+
+@keyframes slideshowfromright {0% { right:-100%; }100%{right:0}}
+@keyframes slideshowfromleft {0% { left:-100%; }100%{left:0}}
+@keyframes slidehidefromright {0%{left:0}100% { left:-100%; }}
+@keyframes slidehidefromleft {0%{right:0}100% { right:-100%; }}
+
+@keyframes zoomIn {0%{height:70%;}100% {height:100%;}}
+@keyframes zoomOut {0%{width: 100%;}100% {width: 70%;}}
+@keyframes imgshowfromright {0% { margin-right:-200%; }100%{margin-right:0}}
+@keyframes imgshowfromleft {0% { margin-left:-200%; }100%{margin-left:0}}
+@keyframes imghidefromright {0%{margin-left:0}100% { margin-left:-200%; }}
+@keyframes imghidefromleft {0%{margin-right:0}100% { margin-right:-200%; }}
+
+@media only screen and (max-width:1024px){
+    .arrow{top:50%}
+    @keyframes zoomOutMobile {0%{width: 300%;}100% {width: 100%;}}
+    @keyframes zoomInMobile {0%{height: 50%;}100% {height: 100%;}}
+    .container .thumbnails-place .thumbnail.zoomOut{height:auto;width: 100%;animation: zoomOutMobile 1s linear;}
+    .container .thumbnails-place .thumbnail.zoomIn{height: 100%;width: 100%;animation: zoomInMobile 1s linear;}
+}
+
+@media only screen and (max-width:550px){
+    @keyframes showMobile {0% { bottom:-44px; }100%{bottom:0}}
+    @keyframes hideMobile {0%{bottom:0}100% { bottom:-44px; }}
+    @keyframes sectionshowMobile {0% { bottom:-345px; }100%{bottom:43px}}
+    @keyframes sectionhideMobile {0%{bottom:43px}100% { bottom:-345px; }}
+
+    .arrow{font-size: 30px;}
+
+    .caption {width: 100%;height: 43px;position: absolute;bottom: 0;background-color: #4b4b4b;z-index: 4;top: unset;left: 0 !important;right: 0;}
+    .caption.hide {animation: hideMobile 0.5s linear;bottom: -43px;}
+    .caption.show {animation: showMobile 0.5s linear;bottom: 0;}
+    .caption span {width: 100%;border-bottom: unset;height: 43px;padding: 0;align-items: center;}
+    .caption span a {writing-mode:unset;transform:unset}
+    section{position: absolute;top: unset;width: 100%;left: 0 !important;height:fit-content;overflow: scroll;}
+    section.show{bottom: 43px;animation: sectionshowMobile 0.5s linear;}
+    section.hide{bottom: -343px;animation: sectionhideMobile 0.5s linear;}
+
+    .title-content{top: 0;}
+    .content{padding: 50pt 10pt;}
+}
