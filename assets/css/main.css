@@ -44,6 +44,8 @@ section.hide{left: -340px;animation: sectionhide 0.5s linear;}
 
 .content{color: #fff;display: flex;flex-direction: column;justify-content: center;align-items: center;width: 100%;height: 100%;padding: 50pt;box-sizing: border-box;}
 .content p{font-size: 32px;line-height: 36px;}
+
+.end-content{}
 @keyframes show {0% { left:-35px; }100%{left:0}}
 @keyframes hide {0%{left:0}100% { left:-35px; }}
 @keyframes sectionshow {0% { left:-341px; }100%{left:40px}}
