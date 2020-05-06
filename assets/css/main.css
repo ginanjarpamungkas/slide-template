@@ -93,6 +93,6 @@ section.hide{left: -340px;animation: sectionhide 0.5s linear;}
     section.hide{bottom: -100px;animation: sectionhideMobile 0.5s linear;display: none;}
 
     .title-content{top: 0;}
-    .end-content,.content{padding: 50pt 10pt;}
+    .end-content,.content{padding: 10pt 30pt;}
     .end-content{display: grid;grid-template-columns: auto;grid-gap: 10px;}
 }
