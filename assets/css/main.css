@@ -88,7 +88,7 @@ section.hide{left: -340px;animation: sectionhide 0.5s linear;}
     .caption.show {animation: showMobile 0.5s linear;bottom: 0;}
     .caption span {width: 100%;border-bottom: unset;height: 43px;padding: 0;align-items: center;}
     .caption span a {writing-mode:unset;transform:unset}
-    section{position: absolute;top: unset;width: 100%;right:0;left: 0 !important;height:fit-content;overflow: scroll;}
+    section{position: absolute;top: unset;width: 96.2%;right:0;left: 0 !important;height:fit-content;overflow: scroll;}
     section.show{bottom: 43px;animation: sectionshowMobile 0.5s linear;}
     section.hide{bottom: -200px;animation: sectionhideMobile 0.5s linear;display: none;}
 
